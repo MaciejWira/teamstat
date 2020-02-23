@@ -1,0 +1,13 @@
+.o-players-list {
+
+  &__tab {
+    display: block;
+    margin-bottom: rem(10);
+    font-weight: 700;
+    font-size: rem(14);
+    width: 100%;
+    border: solid rem(1) grey;
+    padding: rem(10);
+  }
+
+}

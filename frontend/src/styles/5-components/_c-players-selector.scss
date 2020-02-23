@@ -1,0 +1,17 @@
+.c-players-selector {
+
+  &__button {
+
+    &--chosen {
+      background-color: orange;
+      color: white;
+    }
+
+    &[disabled] {
+      background-color: grey;
+      color: lighten(grey, 30%)
+    }
+
+  }
+
+}

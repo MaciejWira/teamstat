@@ -1,0 +1,44 @@
+$b-grid-gutter: 25;
+
+.b-container {
+  max-width: rem(1200);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: rem($b-grid-gutter);
+  padding-right: rem($b-grid-gutter);
+}
+
+.b-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: rem(-$b-grid-gutter);
+  margin-right: rem(-$b-grid-gutter);
+
+  > div[class*="b-col"]{
+      flex-grow: 1;
+      padding-left: rem($b-grid-gutter);
+      padding-right: rem($b-grid-gutter);
+  }
+}
+
+$bp-list: sm, md, lg, xl;
+
+@for $i from 1 to 12 {
+  .b-col-#{$i} {
+    width: calc(100% / #{$i});
+    max-width: calc(100% / #{$i});
+  }
+}
+
+@each $bp-item in $bp-list {
+
+  @for $i from 1 to 12 {
+    .b-col-#{$bp-item}-#{$i} {
+      @include bp($bp-item){
+        width: calc(100% / #{$i});
+        max-width: calc(100% / #{$i});
+      }
+    }
+  }
+
+}

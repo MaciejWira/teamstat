@@ -1,26 +1,27 @@
 Table of contents:
-1. About App
-2. App structure
-3. App set up
-4. Things to come
-
-1. About App
-Keep stats of your games and your teammates in one place.
+1. About App</br>
+Keep stats of your games and your teammates in one place.</br>
+Demo version.</br>
 Features:
-  1. CRUD players
-  2. CRUD your games with details:
-    - date
-    - score
-    - team squads with captains
-    - DEMO: up to 50 games
-  3. Checkout statistics:
-    - players:
-      - wins and loses
-      - variations with 'as captain', 'with crate'
-    - all around
-      - players with most wins and loses
-      - variations with 'as captain', 'with crate'
-
-2. App structure
-3. App set up
-4. Things to come
+	- CRUD players</br>
+	- CRUD your games with details:
+		- date
+		- score
+		- team squads with captains
+	- Checkout statistics:
+		- players:
+			- wins and loses
+			- variations with 'as captain', 'with crate'
+		- all around
+			- players with most wins
+			- variations with 'as captain', 'with crate'
+2. App structure</br>
+	- frontend - Create React App
+	- backend - Node, Express, MongoDB
+3. TODO
+	- bugs / warnings
+		- CRA exahaustive deps warnings
+		- no major error handlers
+		- others ;)
+	- features
+		- many plans ;)

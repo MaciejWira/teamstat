@@ -1,6 +1,45 @@
 .a-button {
-  background-color: black;
-  color: white;
+  background-color: $color-subprimary;
+  color: black;
   font-weight: 700;
+  font-size: rem(14);
+  width: 100%;
   border: none;
+  cursor: pointer;
+  transition: background-color $sec;
+  line-height: 1.25;
+  @include bp(sm){
+    font-size: rem(16);
+  }
+
+  &:hover {
+    background-color: $color-subprimary-l;
+  }
+
+  &--grey {
+    background-color: $color-grey;
+  }
+
+  &--light {
+    background-color: $color-subprimary-l;
+    &:hover {
+      background-color: $color-subprimary;
+      color: white;
+    }
+  }
+
+  &--black {
+    background-color: black;
+    color: white;
+    &:hover {
+      background-color: $color-grey-d;
+    }
+  }
+
+  &--large {
+    font-size: rem(16);
+    text-transform: uppercase;
+    min-height: rem(40);
+  }
+
 }

@@ -13,6 +13,7 @@ export const useSearch = ({ arr, prop }) => {
 
   const searchInput = (
     <input
+      className="a-input"
       value={searchValue}
       onChange={e => setSearchValue(e.target.value)}
       placeholder='Szukaj'/>

@@ -1,0 +1,55 @@
+.c-team-data {
+  margin-bottom: rem(10);
+
+  &__label, &__select, &__score {
+    display: block;
+    width: 100%;
+  }
+
+  &__label {
+    margin-bottom: rem(10);
+  }
+
+  &__ol {
+    padding-top: rem(5);
+    padding-bottom: rem(10);
+    color: white;
+    list-style: decimal;
+    list-style-position: inside;
+  }
+
+  &__li {
+    line-height: 1.25;
+    @include bp(sm){
+      line-height: 1.35;
+    }
+    @include bp(lg){
+      line-height: 1.55
+    }
+  }
+
+  &--presentation {
+    padding-top: rem(15);
+
+    .c-team-data {
+
+      &__label {
+        // font-size: rem(18);
+      }
+
+      &__score {
+        color: white;
+        font-size: rem(36);
+        font-weight: 300;
+        margin-bottom: rem(25);
+        @include bp(lg){
+          font-size: rem(42);
+          margin-bottom: rem(35);
+        }
+      }
+
+    }
+
+  }
+
+}

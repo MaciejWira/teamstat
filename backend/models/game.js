@@ -10,8 +10,8 @@ const GameSchema = new Schema({
     name: String,
     score: Number,
     isWinner: Boolean,
-    captainId: String,
-    players: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Player' }]
+    captainId: { type: String, required: true },
+    players: [{ type: mongoose.Schema.Types.ObjectId, ref: 'player' }]
   }]
 });
 

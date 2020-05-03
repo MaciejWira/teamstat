@@ -16,21 +16,21 @@ const PlayersSelector = ({
 
   const playersSelections = filteredValues.map((player, index) => (
     <li
-      key={player.id}
+      key={player._id}
       className="c-players-selector__item">
       <button
         disabled={ player.teamId && player.teamId !== teamId }
         onClick={() => selectHandler(index)}
-        className={`a-button c-players-selector__button${player.teamId ? " c-players-selector__button--chosen" : ""}`}>
+        className={`a-button a-button--light c-players-selector__button${player.teamId ? " c-players-selector__button--chosen" : ""}`}>
         {player.name}
       </button>
     </li>
   ))
 
   return(
-    <div>
+    <div className="c-players-selector">
       {searchInput}
-      <ul className="c-players-selector">
+      <ul className="c-players-selector__list">
         {playersSelections}
       </ul>
     </div>

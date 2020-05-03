@@ -1,11 +1,13 @@
 .c-header {
   position: fixed;
+  z-index: $z-sky;
   top: 0;
   left: 0;
   right: 0;
   height: rem($c-header-height);
-  background-color: black;
-  color: white;
+  background-color: $color-primary;
+  box-shadow: 0 0 rem(35) rgba(black, 1);
+  color: $color-subprimary;
 
   &__container {
     height: 100%;
@@ -20,19 +22,29 @@
 
   &__heading {
     font-size: rem(24);
-    font-weight: 700;
-  }
+    font-family: $font-subprimary;
+    @include bp(sm){
+      font-size: rem(26);
+    }
+    @include bp(lg){
+      font-size: rem(32);
+    }
 
-  &__link {
-    font-size: rem(14);
-    text-transform: uppercase;
-    font-weight: 700;
-    padding-left: rem(10);
-    padding-right: rem(10);
-
-    &:last-child {
-      padding-right: 0;
+    sub {
+      font-family: $font-primary;
+      text-transform: uppercase;
+      font-size: rem(10);
+      font-weight: 300;
+      display: inline-block;
+      margin-left: rem(4);
+      transform: translateY(rem(2));
     }
   }
+
+
+
+
+
+
 
 }

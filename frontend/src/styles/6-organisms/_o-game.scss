@@ -1,12 +1,65 @@
 .o-game {
+  text-align: center;
+
+  input {
+    text-align: center;
+  }
+
+  &__wrapper {
+    @include toggle-vision;
+  }
 
   &__date {
     margin-bottom: rem(10);
   }
 
+  &__main {
+    margin-bottom: rem(10);
+    @include bp(md){
+      margin-bottom: rem(20);
+    }
+  }
+
   &__crate {
-    display: flex;
+    position: relative;
+    color: white;
+    display: inline-flex;
     align-items: center;
+    padding-left: rem(20);
+    margin-bottom: rem(20);
+
+    span {
+      &:before, &:after {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 0;
+      }
+
+      &:before {
+        border: solid rem(2) $color-subprimary;
+        transform: translateY(-50%);
+        height: rem(14);
+        width: rem(14);
+      }
+
+      &:after {
+        opacity: 0;
+        @include birdie;
+      }
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      &:checked {
+        ~ span:after {
+          opacity: 1;
+        }
+      }
+    }
   }
 
 }

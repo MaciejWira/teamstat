@@ -8,6 +8,7 @@ node_modules
 
 # production
 build
+backend/config.js
 
 # misc
 .DS_Store

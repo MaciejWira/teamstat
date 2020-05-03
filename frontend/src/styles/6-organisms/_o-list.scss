@@ -1,0 +1,45 @@
+.o-list {
+
+  &__tab {
+    color: white;
+    border: solid rem(1) $border-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: rem(10);
+    font-size: rem(20);
+    font-weight: 300;
+    width: 100%;
+    padding: rem(10);
+    transition: color $sec;
+
+    &:hover {
+      color: $color-subprimary-l;
+
+      .a-caret {
+        margin-left: rem(10);
+      }
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+
+      .a-caret {
+        margin-left: rem(7);
+        transition: margin-left $sec;
+      }
+    }
+
+
+  }
+
+  &__tab-button {
+    margin-bottom: 0;
+    margin-left: rem(10);
+    padding-left: rem(20);
+    padding-right: rem(20);
+    width: auto;
+  }
+
+}

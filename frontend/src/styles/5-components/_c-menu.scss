@@ -1,0 +1,91 @@
+.c-menu {
+
+  &__link {
+    display: block;
+    color: white;
+    font-size: rem(24);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-right: rem(10);
+    padding-top: rem(12);
+    margin-bottom: rem(12);
+    transition: color $sec;
+    &:hover {
+      color: $color-subprimary
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      height: rem(1);
+      margin-top: rem(10);
+      background-color: $border-color
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+}
+
+.c-menu-wrapper {
+  @include toggle-vision;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($color-primary, .8);
+  overflow-y: auto;
+
+  &__container {
+    min-height: 100%;
+  }
+
+  &__main {
+    padding: rem(20);
+    background-color: $color-primary;
+    width: rem(320);
+    margin-left: auto;
+    margin-right: 0;
+    max-width: 100%;
+    min-height: 100vh;
+    box-shadow: 0 0 rem(65) 0 rgba($color-subprimary, .35);
+    transition: transform $sec;
+    transform: translateX(100%);
+    @include bp(sm){
+      padding: rem(35);
+      width: rem(360);
+    }
+  }
+
+  .c-burger-wrapper {
+    margin-bottom: rem(15);
+    &:hover {
+      .c-burger__line {
+        background-color: white
+      }
+      .c-burger-text {
+        color: white
+      }
+    }
+  }
+
+  .c-burger__line {
+    background-color: $color-subprimary;
+  }
+
+  .c-burger-text {
+    color: $color-subprimary;
+    font-size: rem(16);
+    font-weight: 300;
+  }
+
+  &--show {
+    .c-menu-wrapper__main {
+      transform: translateX(0);
+    }
+  }
+
+}

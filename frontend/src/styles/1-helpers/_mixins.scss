@@ -21,3 +21,47 @@
     }
   }
 }
+
+@mixin toggle-vision {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s, visibility .2s;
+
+  &--show {
+    opacity: 0;
+    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
+  }
+
+}
+
+@mixin birdie {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  border-left: solid rem(3) white;
+  border-bottom: solid rem(3) white;
+  height: rem(8);
+  width: rem(13);
+  transform: translateY(-65%) rotate(-45deg);
+}
+
+@mixin birdie-x {
+  &:after, &:before {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: rem(10);
+    content: "";
+    display: block;
+    height: rem(3);
+    width: rem(13);
+    background-color: $color-grey-d;
+  }
+  &:after {
+    transform: rotate(45deg);
+  }
+  &:before {
+    transform: rotate(-45deg);
+  }
+}

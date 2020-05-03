@@ -1,3 +1,9 @@
 .l-app {
-  padding-top: rem($c-header-height + 20);
+  padding-top: rem($c-header-height + 25);
+  @include bp(sm){
+    padding-top: rem($c-header-height + 35);
+  }
+  @include bp(lg){
+    padding-top: rem($c-header-height + 45);
+  }
 }

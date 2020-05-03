@@ -11,11 +11,12 @@ const PlayersAdmin = () => {
 
   const submitHandler = e => {
     e.preventDefault();
-    axios.post('/players',{
-      name: playerName
-    })
+
+    const submitCore = () => {
+      axios.post('/players',{
+        name: playerName
+      })
       .then(res => {
-        console.log(res.data);
         setPlayerName('');
         dispatch({
           type: 'addPlayer',
@@ -23,20 +24,48 @@ const PlayersAdmin = () => {
         })
       })
       .catch(err => {
-        console.log(err);
+        alert(err.response.data.error);
       })
+    };
+
+    if (localStorage.getItem('teamstat-auth') === 'authed') submitCore();
+    else {
+      const password = prompt("Aby dodawać zawodników, wpisz hasło podane przez administratora.\nHasło wystarczy wpisać raz.\nKontakt: wira.macie@gmail.com");
+      if (password === "Guliwer"){
+        localStorage.setItem('teamstat-auth', 'authed');
+        axios.post('/players',{
+          name: playerName
+        })
+        .then(res => {
+          setPlayerName('');
+          dispatch({
+            type: 'addPlayer',
+            payload: res.data
+          })
+        })
+        .catch(err => {
+          alert(err.response.data.error);
+        })
+      } else alert("Złe hasło");
+
+    }
   };
 
   return(
-    <div>
+    <div className="o-players__form">
 
-      <h2 className='a-subheading'>Dodaj zawodnika</h2>
+      <label className='a-label o-players__label'>Dodaj zawodnika</label>
 
       <form onSubmit={submitHandler}>
         <input
+          placeholder="Wpisz nazwę zawodnika"
           value={playerName}
           onChange={ev => setPlayerName(ev.target.value)}/>
-        <button type="submit">Dodaj</button>
+        <button
+          className="a-button o-players__submit"
+          type="submit">
+          Dodaj
+        </button>
       </form>
 
     </div>

@@ -1,6 +1,9 @@
+import { PATH_GAMES } from './views/helpers';
+import { PATH_PLAYER } from './views/helpers';
+
 import React, { useEffect } from 'react';
 import {
-  BrowserRouter,
+  HashRouter,
   Switch,
   Route
 } from 'react-router-dom';
@@ -35,19 +38,22 @@ const AppCore = () => {
   ));
 
   return(
-    <BrowserRouter>
+    <HashRouter>
       <div className="l-app">
-        <div className="b-container">
+        <div className="b-container b-container--sm">
           <Header />
           <Switch>
             {routes}
             <Route
-              path='/player/:id'
+              path={`${PATH_PLAYER}/:id`}
               component={Player} />
+            <Route
+              path={`${PATH_GAMES}/:id`}
+              component={Game} />
           </Switch>
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 };
 

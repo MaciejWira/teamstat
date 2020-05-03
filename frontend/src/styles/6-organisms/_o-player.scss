@@ -1,8 +1,26 @@
 .o-player {
 
   &__stat {
+    color: white;
     padding-top: rem(5);
-    padding-bottom: rem(5);
+    padding-bottom: rem(10);
+
+    span {
+      font-size: rem(16);
+      @include bp(sm){
+        font-size: rem(18);
+      }
+      @include bp(md){
+        font-size: rem(20);
+      }
+    }
+
+    &-value {
+      display: inline-block;
+      margin-left: rem(5);
+      font-weight: 300
+    }
+
   }
 
 }

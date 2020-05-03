@@ -1,11 +1,13 @@
-$b-grid-gutter: 25;
-
 .b-container {
-  max-width: rem(1200);
+  max-width: rem(900);
   margin-left: auto;
   margin-right: auto;
   padding-left: rem($b-grid-gutter);
   padding-right: rem($b-grid-gutter);
+}
+
+.b-container--sm {
+  max-width: rem(550);
 }
 
 .b-row {

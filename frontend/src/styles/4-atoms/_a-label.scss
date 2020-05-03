@@ -1,0 +1,8 @@
+.a-label {
+  color: $color-subprimary;
+  font-weight: 700;
+  font-size: rem(14);
+  @include bp(sm){
+    font-size: rem(16);
+  }
+}

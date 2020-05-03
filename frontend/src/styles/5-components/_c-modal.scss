@@ -2,12 +2,12 @@
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  z-index: 101;
+  z-index: $z-moon;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(grey, .7);
+  background-color: rgba($color-primary, .9);
   transition: opacity .3s, visibility .3s;
   display: flex;
   justify-content: center;
@@ -18,9 +18,18 @@
     visibility: visible;
   }
 
+  &__button {
+
+  }
+
   &__content {
     background-color: white;
     padding: rem(25);
     box-shadow: 0 0 rem(15) 0 rgba(black, .25);
+    max-height: 80%;
+    overflow-y: auto;
+    @include bp(sm){
+      padding: rem(30) rem(45);
+    }
   }
 }

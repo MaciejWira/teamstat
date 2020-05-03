@@ -1,15 +1,28 @@
 .c-players-selector {
 
   &__button {
+    position: relative;
+    padding-left: rem(30);
+    text-align: left;
 
-    &--chosen {
-      background-color: orange;
-      color: white;
+    &--chosen:not([disabled]) {
+      background-color: $color-subprimary;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: rem(10);
+        @include birdie;
+      }
+      &:hover {
+        background-color: $color-grey-d;
+      }
     }
 
     &[disabled] {
-      background-color: grey;
-      color: lighten(grey, 30%)
+      color: $color-grey-d;
+      background-color: $color-grey;
+      @include birdie-x;
     }
 
   }

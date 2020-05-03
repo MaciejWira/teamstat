@@ -1,23 +1,35 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
 import { viewsArr } from '../../views/helpers';
+import Burger from '../Burger';
+import Menu from '../Menu';
 
 const Header = () => {
 
-  const links = viewsArr.map((link, index) => (
-    <Link key={index} className="c-header__link" to={link.path}>{link.name}</Link>
-  ))
+  const [ openedMenu, setOpenedMenu ] = useState(false);
 
   return(
     <header className="c-header">
       <div className="c-header__container b-container">
         <div className="c-header__wrapper">
-          <h1 className="c-header__heading">teamstat</h1>
+
+          <h1 className="c-header__heading">
+            <Link to="/">
+              teamstat<sub>Demo</sub>
+            </Link>
+          </h1>
+
           <div className="c-header__nav">
-            <ul className="c-header__menu">
-              {links}
-            </ul>
+
+            <Burger
+              isActive={openedMenu}
+              clickHandler={() => setOpenedMenu(prev => !prev)}/>
+
+            <Menu
+              openedMenu={openedMenu}
+              setOpenedMenu={setOpenedMenu}/>
+
           </div>
         </div>
       </div>

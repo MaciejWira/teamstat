@@ -40,7 +40,10 @@ const Player = (props) => {
   const stats = statsConstructor.map((stat, index) => (
     <div className="b-col-1" key={index}>
       <div className="o-player__stat">
-        <p>{stat.name}: {stat.value}</p>
+        <p>
+          <span className="a-label">{stat.name}:</span>
+          <span className="o-player__stat-value">{stat.value}</span>
+        </p>
       </div>
     </div>
   ));

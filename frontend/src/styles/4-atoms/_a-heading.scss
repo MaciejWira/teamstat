@@ -1,6 +1,19 @@
 .a-heading {
   text-transform: uppercase;
-  font-size: rem(24);
-  font-weight: 600;
-  margin-bottom: rem(10);
+  font-size: rem(36);
+  letter-spacing: rem(2);
+  font-weight: 300;
+  margin-bottom: rem(20);
+  color: white;
+  @include bp(sm){
+    font-size: rem(42);
+    margin-bottom: rem(25);
+  }
+  @include bp(md){
+    font-size: rem(48);
+    margin-bottom: rem(35);
+  }
+  @include bp(xl){
+    font-size: rem(54);
+  }
 }

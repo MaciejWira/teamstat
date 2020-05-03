@@ -1,0 +1,22 @@
+.o-players {
+
+  &__label {
+    display: block;
+    margin-bottom: rem(10);
+    @include bp(sm){
+      margin-bottom: rem(15);
+    }
+  }
+
+  &__submit {
+    display: inline-block;
+    width: auto;
+    padding-left: rem(15);
+    padding-right: rem(15);
+  }
+
+  &__form {
+    margin-bottom: rem(15);
+  }
+
+}

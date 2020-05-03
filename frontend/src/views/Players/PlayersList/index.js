@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
+import { PATH_PLAYER } from '../../../views/helpers';
 import { useSearch } from '../../../hooks/useSearch';
 import { useStateValue } from '../../../state/context';
 
@@ -12,20 +13,20 @@ const PlayersList = () => {
   const playersTabs = filteredValues.map(player => (
     <div className="b-col-1" key={player._id}>
       <Link
-        to={`/player/${player._id}`}
-        className='o-players-list__tab'>
+        to={`${PATH_PLAYER}/${player._id}`}
+        className='o-list__tab'>
         {player.name}
+        <span className="a-caret"></span>
       </Link>
     </div>
   ));
 
   return(
-    <div className='o-players-list'>
-      <h1 className='a-heading'>Zawodnicy</h1>
-      <div className='o-players-list__filters'>
+    <div className='o-list'>
+      <div className='o-list__filters'>
         {searchInput}
       </div>
-      <div className='o-players-list__tabs b-row'>
+      <div className='o-list__tabs b-row'>
         {playersTabs}
       </div>
     </div>

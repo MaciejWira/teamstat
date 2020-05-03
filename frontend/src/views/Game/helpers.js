@@ -1,3 +1,5 @@
+import { dateResetHour } from '../../helpers/dateParsers';
+
 export const initialTeamDetail = {
   name: '',
   id: 0,
@@ -17,7 +19,7 @@ const initialTeams = teams.map(team => ({
 }));
 
 export const initialGameDetails = {
-  date: new Date(),
+  date: dateResetHour(new Date()),
   isCrate: false,
   isDraw: false,
   teams: initialTeams

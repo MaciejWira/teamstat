@@ -2,8 +2,15 @@
   box-sizing: border-box;
 }
 
+*::selection {
+  background-color: $color-grey-d;
+  color: $color-subprimary;
+}
+
 body {
   font-family: $font-primary;
+  min-height: 100vh;
+  background-color: $color-primary;
 }
 
 a {
@@ -15,17 +22,35 @@ strong {
   font-weight: 700;
 }
 
+input, button, select, label, option {
+  font-size: rem(14);
+  font-weight: 600;
+  font-family: $font-primary;
+  @include bp(sm){
+    font-size: rem(16);
+  }
+}
+
+select option:checked {
+  background-color: $color-subprimary;
+  box-shadow: 0 0 10px 100px $color-subprimary inset;
+}
+
 input, button, select, label {
-  font-size: rem(12);
   margin-bottom: rem(10);
   max-width: 100%;
+  outline-color: $color-subprimary;
 }
 
 input:not([type=checkbox]), button, select {
   padding: rem(5) rem(7);
   background-color: white;
-  border: solid rem(1) grey;
-  min-height: rem(30);
+  // border: solid rem(1) $color-grey;
+  border: none;
+  min-height: rem(40);
+  @include bp(md){
+    padding: rem(7) rem(10);
+  }
 }
 
 input[type=checkbox] {
@@ -33,4 +58,9 @@ input[type=checkbox] {
   margin-top: 0;
   margin-bottom: 0;
   margin-right: rem(3);
+}
+
+input::placeholder {
+  color: grey;
+  font-weight: 300;
 }

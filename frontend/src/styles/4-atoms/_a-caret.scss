@@ -1,0 +1,8 @@
+.a-caret {
+  display: inline-block;
+  height: rem(10);
+  width: rem(10);
+  border-right: solid rem(3) $color-subprimary;
+  border-bottom: solid rem(3) $color-subprimary;
+  transform: rotate(-45deg);
+}
